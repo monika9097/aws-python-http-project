@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My AWS Project</title>
+  <style>
+    /* Reset and basic */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 700px;
+      background: rgba(0, 0, 0, 0.45);
+      border-radius: 15px;
+      padding: 40px 30px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      color: #f0f8ff;
+      text-shadow: 0 0 8px #fff;
+    }
+
+    p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      margin-bottom: 30px;
+      color: #dcdcdc;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 0.9rem;
+      color: #bbb;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Hi, I Built This Project From Scratch!</h1>
+    <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80" alt="Tech project" />
+    <p>
+      I deployed my application in one of the private subnets and accessed it using a bastion host.  
+      This setup helped me understand how a Load Balancer works by routing traffic to a subnet where the app is running.  
+      I created a VPC with two private subnets and one public subnet, along with an Auto Scaling group having two instances — one per Availability Zone.  
+      Since private subnets are per AZ, the bastion host was created in the public subnet.  
+      I copied my EKS key to one of the private subnet instances, SSHed to it using the bastion host, and deployed a simple Python app with this <code>index.html</code> file.  
+      Finally, I configured an Application Load Balancer to send traffic to the working private subnet instance.
+    </p>
+    <footer>Made with ❤️ using AWS EC2, VPC, Load Balancer, and Python HTTP Server</footer>
+  </div>
+</body>
+</html>
